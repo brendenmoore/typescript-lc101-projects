@@ -1,6 +1,6 @@
 // URL for the instructions:
 // https://education.launchcode.org/intro-to-professional-web-dev/chapters/typescript/exercises.html
-
+import { SpaceLocation } from "./SpaceLocation";
 // Part 1: Declare (5) Variables With Type
 // let spacecraftName: string = "Determination";
 // let speedMph: number = 17500;
@@ -35,6 +35,14 @@ class Spacecraft {
     let hoursAway: number = milesAway / this.speedMph;
     let daysAway: number = hoursAway / 24;
     return daysAway;
+  }
+
+  printDaysToLocation(location: SpaceLocation) {
+    console.log(
+      `${this.name} would take ${this.getDaysToLocation(
+        location.kilometersAway
+      )} days to get to ${location.name}.`
+    );
   }
 }
 
